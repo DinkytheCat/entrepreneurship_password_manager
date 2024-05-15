@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Password Manager</title>
+    <style>
+        .button {
+            padding: 15px 25px;
+            font-size: 24px;
+            text-align: center;
+            cursor: pointer;
+            outline: none;
+            color: #2aa465;
+            background-color: #106948;
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 9px #999;
+        }
+        .button:hover {background-color: #228B22}
+        .button:active {
+            background-color: #3e8e41;
+            box-shadow: 0 5px;
+            transform: translateY(4px);
+        }
+
+        body {
+            background-color: rgb(30, 95, 53);
+        }
+
+        .text-below-button {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 18px;
+            color: #a37c7c; /* Text color changed to white for better visibility */
+        }
+        .text-below-text {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+            color: #fff; 
+        }
+        
+        .directions-list {
+            list-style-type: none;
+            padding: 0;
+            margin-top: 10px;
+            text-align: center;
+            font-size: 16px;
+            color: #ccbd9c;
+        }
+        .if-errors-text {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 11px;
+            color: #2e2929; 
+        }
+    </style>
+</head>
+<body>
+    <h1 align="center">Password Manager</h1>
+
+    <h1 align="center">
+        <button class="button" onclick="downloadFolder()">Download</button>
+    </h1>
+
+    <p class="text-below-button">This is an easy secure and reliable password manager.</p>
+    <p class="text-below-text">Here are some simple directions to follow:</p>
+    
+    <ul class="directions-list">
+        <li>Step 1: Click the "Download" button above.</li>
+        <li>Step 2: Open the downloaded ZIP file.</li>
+        <li>Step 3: Extract the contents of the ZIP file.</li>
+        <li>Step 4: Open the Password Manager application through vscode.</li>
+        <li>Step 5: Go to main.py and run in terminal</li>
+
+    </ul>
+    <p class="if-errors-text">If errors check that you are using the correct python interpretor(3.8.9) and try to run "pip3 install pycryptodome" in the terminal:</p>
+    <script>
+        function downloadFolder() {
+            //Creates an anchor element
+            var anchor = document.createElement('a');
+            anchor.style.display = 'none';
+
+            //makes the href attribute to the URL of the ZIP file containing the folder with all the working code
+            anchor.href = 'https://github.com/DinkytheCat/Password_Manager/archive/main.zip';
+
+            //Sets the download attribute to the name of the github repository
+            anchor.download = 'Password_Manager.zip';
+
+            //Simply appends the anchor element to the body
+            document.body.appendChild(anchor);
+
+            //This triggers a click event on the anchor element
+            anchor.click();
+
+            //Removes the whole anchor element from the body
+            document.body.removeChild(anchor);
+        }
+    </script>
+</body>
+</html>
